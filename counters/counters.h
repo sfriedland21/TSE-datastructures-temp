@@ -59,7 +59,7 @@ int counters_add(counters_t *ctrs, const int key);
  * Caller provides:
  *   valid pointer to counterset, and key(must be >= 0)
  * We return:
- *   current value of counter associte with the given key, if present,
+ *   current value of counter associted with the given key, if present,
  *   0 if ctrs is NULL or if key is not found.   
  * Note:
  *   counterset is unchanged as a result of this call.

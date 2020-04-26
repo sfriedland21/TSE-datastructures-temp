@@ -1,0 +1,15 @@
+./counterstest 
+Creating counter set...
+Testing counters_add:
+Counter value: 0
+Testing counters_get:
+Counter value: 4
+Counter value for nonexistent key: 0
+Testing counters_set:
+Key has been set
+Key not set
+Testing counters_print:
+Testing counters_interate:
+Key found: key 2, count = 10
+Deleting the counter set...
+End of test.

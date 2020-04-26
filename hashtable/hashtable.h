@@ -1,7 +1,7 @@
 /* 
  * hashtable.h - header file for CS50 hashtable module
  *
- * A *hashtable* is a set of (key,item) pairs.  It acts just like a set, 
+ * A *hashtable* is a set of (key,item) pairs. It acts just like a set, 
  * but is far more efficient for large collections.
  *
  * David Kotz, April 2016, 2017, 2019

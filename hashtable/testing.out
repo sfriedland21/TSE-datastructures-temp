@@ -1,0 +1,11 @@
+./hashtabletest
+Creating hashtable...
+Testing hashtable_insert:
+Insert sucessful
+Testing hashtable_find:
+Found item: 2
+Testing hashtable_print:
+Testing hashtable_iterate:
+Key found: key = key1, item = 2
+Deleting hashtable...
+End of test.

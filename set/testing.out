@@ -1,0 +1,10 @@
+./settest
+Creating set...
+Testing set_insert:
+First insert sucessful
+Second insert sucessful
+Testing set_print:
+Testing set_iterate:
+Key found: Key = key1, item = 2
+Deleting the set...
+End of test.

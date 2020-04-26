@@ -42,14 +42,14 @@ set_t *set_new(void);
  *   valid set pointer, valid string pointer, and pointer to item.
  * We return:
  *  false if key exists, any parameter is NULL, or error;
- *  true iff new item was inserted.
+ *  true if new item was inserted.
  * Caller is responsible for:
  *   later calling set_delete to free the memory used by key strings.
  * Notes:
  *   The key string is copied for use by the set; that is, the module
  *   is responsible for allocating memory for a copy of the key string, and
  *   later deallocating that memory; thus, the caller is free to re-use or 
- *   deallocate its key string after this call.  
+ *   deallocate its key string after this call.
  */
 bool set_insert(set_t *set, const char *key, void *item);
 
