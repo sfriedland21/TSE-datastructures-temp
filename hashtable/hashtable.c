@@ -18,13 +18,12 @@
 #include "hashtable.h"
 #include "jhash.h"
 
-/**************** functions ****************/
-
 /**************** global types ****************/
 typedef struct hashtable { 
     set_t **array; // head of the list of items in a set
     int size;
 } hashtable_t;
+
 /**************** functions ****************/
 
 /**************** hashtable_new ****************/
@@ -50,10 +49,8 @@ bool hashtable_insert(hashtable_t *ht, const char *key, void *item)
 {
   if (ht != NULL && key != NULL && item != NULL) {
     char *keycopy = (char *)malloc((strlen(key) + 1)*sizeof(char));
-	if (keycopy == NULL) {
-	    fprintf(stderr, "could not allocate memory for keycopy");
+	if (keycopy == NULL)
 		return false;
-	}
     int hashcode = JenkinsHash(key, ht->size); // get hash code
     keycopy = (char *)strcpy(keycopy, key); // since memory was allocated
     if (ht->array[hashcode] == NULL) { // if no set at location, create new set

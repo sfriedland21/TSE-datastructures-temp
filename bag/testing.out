@@ -1,0 +1,10 @@
+gcc -Wall -pedantic -std=c11 -ggdb  -I../common   -c -o bagtest.o bagtest.c
+gcc -Wall -pedantic -std=c11 -ggdb  -I../common   -c -o bag.o bag.c
+gcc -Wall -pedantic -std=c11 -ggdb  -I../common bagtest.o bag.o ../common/readlinep.o ../common/memory.o  -o bagtest
+./bagtest < test_names
+testing bag_insert:
+Count: 66
+The bag:
+{ "Austin" "Ziyi" "Katrina" "Carlos" "Xiaoyi" "Joseph" "Noah" "David" "Naina" "Yunjin" "Alexander" "James" "Samuel" "Jai" "Andrew" "Nathan" "Rory" "William" "Alex" "Emma" "Naren" "John" "Joseph" "Christian" "William" "Jiro" "Dhaivat" "John" "Isaiah" "Bryan" "Rohith" "Chirag" "Jiehui" "Joanna" "Amber" "Sydney" "Seungjae" "Grant" "Dante" "Yash" "Janvi" "Aadil" "Ryan" "Katelyn" "Ian" "Callum" "Robert" "Vivek" "Shijie" "Paul" "Sanjana" "Cara" "Daniel" "Quang" "Jared" "Sylvester" "Aditya" "Urie" "Raymond" "Jiuqi" "Sunbir" "Jose" "Zachary" "makale" "Anne" "Yunive" }
+
+delete the bag...

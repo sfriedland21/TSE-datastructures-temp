@@ -1,5 +1,5 @@
 # CS50 Lab 3
-## Your name, CS50 Winter 2020
+## CS50 Winter 2020
 
 ### bag
 

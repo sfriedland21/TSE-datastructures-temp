@@ -24,4 +24,4 @@ readlinep.o: readlinep.h
 .PHONY: clean
 
 clean:
-	rm -f *~ *.o *.dSYM
+	rm -f *~ *.o *.dSYM *.a

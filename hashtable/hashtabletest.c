@@ -23,7 +23,7 @@ void item_delete();
 int main() {
     hashtable_t *ht;
     const int numslots = 10;
-    FILE * ifile = fopen("ofile","w"); // some testfile
+    FILE *ifile = fopen("ofile","w"); // some testfile
     
     printf("Creating hashtable...\n");
     ht = hashtable_new(numslots); // create hashtable
@@ -46,9 +46,10 @@ int main() {
     else
         printf("Insert not sucessful\n");
     hashtable_insert(ht, key2, (void*)item2);
+    hashtable_insert(ht, key2, (void*)item1);
 
     printf("Testing hashtable_find:\n");
-    founditem = *((int*)hashtable_find(ht, key1)); 
+    founditem = *((int*)hashtable_find(ht, key1));
     printf("Found item: %d\n", founditem); // prints found item, item = 2
 
     printf("Testing hashtable_print:\n");
@@ -81,7 +82,7 @@ void print_keypair(void *arg, const char *key, int *item)
 }
 
 /**************** item_delete ****************/
-/* Frees item memory at a node */
+/* Frees item memory in hashtable */
 void item_delete(void *item)
 {
     if (item != NULL) {

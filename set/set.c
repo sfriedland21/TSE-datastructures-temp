@@ -50,8 +50,8 @@ set_t *set_new(void)
 /**************** set_insert ****************/ 
 bool set_insert(set_t *set, const char *key, void *item)
 {
-  if (set != NULL && item != NULL && set_find(set, key) == NULL) {
-    // check if item in set (prevent duplicate entries here)
+  if (set != NULL && item != NULL && key != NULL && set_find(set, key) == NULL) {
+    // check if key in set (prevent duplicate entries here)
     snode_t *nNode = snode_new(key, item);
     if (nNode != NULL) { // check if memory was allocated for the node
       nNode->next = set->head; // insert at head of list
@@ -129,7 +129,7 @@ void set_print(set_t *set, FILE *fp,
 
 /**************** set_iterate ****************/
 void set_iterate(set_t *set, void *arg,
-                 void (*itemfunc)(void *arg, const char *key, void *item) )
+                 void (*itemfunc)(void *arg, const char *key, void *item))
 {
   if (set != NULL && itemfunc != NULL) {
     // call itemfunc on each item
@@ -140,14 +140,14 @@ void set_iterate(set_t *set, void *arg,
 }
 
 /**************** set_delete ****************/
-void set_delete(set_t *set, void (*itemdelete)(void *item) ) 
+void set_delete(set_t *set, void (*itemdelete)(void *item)) 
 {
   if (set != NULL) {
     snode_t *temp = set->head;
     while(temp != NULL) { // traverse list
+      snode_t *next = temp->next;
       if (itemdelete != NULL)
 	      (*itemdelete)(temp->item); // free the node's item
-      snode_t *next = temp->next;
       free(temp->key); // free the node
       temp->key = NULL;
       free(temp);

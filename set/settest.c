@@ -32,6 +32,7 @@ int main() {
     char *key1 = "key1";
     char *key2 = "key2";
     char *key3 = "key3";
+    char *key4 = NULL;
     int *item1 = (int *)malloc(sizeof(int));
     *item1 = 2;
     int *item2 = (int *)malloc(sizeof(int));
@@ -46,6 +47,10 @@ int main() {
         printf("Second insert sucessful\n"); // should print
     }
     else printf("Second insert not sucessful\n");
+    if (set_insert(set, key4, (void*)item2)) {
+        printf("Third insert (of null key) sucessful\n"); 
+    }
+    else printf("Third insert (of null key) not sucessful\n"); // should print, bc null key
 
     printf("Testing set_print:\n");
     set_print(set, ifile, print_settofile); // pass valid file pointer, check ofile for result
